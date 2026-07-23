@@ -299,15 +299,15 @@ If Phase 1 finds Vercel's Production Branch set to `development`, note that PR #
 
 #### Automated
 
-- [ ] 1.1 `main` protection intact (`required_linear_history`, no force-push)
-- [ ] 1.2 `development` unprotected (protection endpoint returns 404)
-- [ ] 1.3 Working tree clean apart from `change.md`
+- [x] 1.1 `main` protection intact (`required_linear_history`, no force-push)
+- [x] 1.2 `development` unprotected (protection endpoint returns 404)
+- [x] 1.3 Working tree clean apart from `change.md`
 
 #### Manual
 
-- [ ] 1.4 Vercel Production Branch = `main`
-- [ ] 1.5 Pre-change observed value recorded in `change.md` Notes
-- [ ] 1.6 `https://www.chrobok.dev` serves the placeholder and returns 200
+- [x] 1.4 Vercel Production Branch = `main`
+- [x] 1.5 Pre-change observed value recorded in `change.md` Notes
+- [x] 1.6 `https://www.chrobok.dev` serves the placeholder and returns 200
 
 ### Phase 2: Document the release model in the repo
 
