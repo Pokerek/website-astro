@@ -40,6 +40,19 @@ precautionary rather than understated, and no partial-page window was ever open.
 - `development` — unprotected; the protection endpoint returns HTTP 404, which is the intended state
   until F-03 (`inspection-gate`) attaches required status checks.
 
+### Follow-up out of scope for this change
+
+**The `.github/instructions/` set targets GitHub Copilot, but the project now uses Claude Code.**
+Raised during Phase 2 manual verification. The `copilot-instructions.md` +
+`*.instructions.md` + `applyTo:` frontmatter layout is Copilot's convention; Claude Code does not
+load it, and there is no `CLAUDE.md`/`AGENTS.md` at the repo root — so all four modules, including
+the new release-process one, are currently invisible to the agent doing the work.
+
+Decision for this change: keep the module where it is (it follows the existing convention and the
+content is correct), and record the gap rather than silently expand F-02's scope into an
+instruction-system migration. A TODO block at the top of `.github/copilot-instructions.md` states
+the problem and the fix. The migration itself wants its own change.
+
 **Production baseline (pre-Phase-3 merge), captured 2026-07-23:**
 
 - `HTTP/2 200`, serves `Work in progress...`

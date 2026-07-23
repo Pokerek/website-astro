@@ -299,33 +299,33 @@ If Phase 1 finds Vercel's Production Branch set to `development`, note that PR #
 
 #### Automated
 
-- [x] 1.1 `main` protection intact (`required_linear_history`, no force-push)
-- [x] 1.2 `development` unprotected (protection endpoint returns 404)
-- [x] 1.3 Working tree clean apart from `change.md`
+- [x] 1.1 `main` protection intact (`required_linear_history`, no force-push) — fdd1fcc
+- [x] 1.2 `development` unprotected (protection endpoint returns 404) — fdd1fcc
+- [x] 1.3 Working tree clean apart from `change.md` — fdd1fcc
 
 #### Manual
 
-- [x] 1.4 Vercel Production Branch = `main`
-- [x] 1.5 Pre-change observed value recorded in `change.md` Notes
-- [x] 1.6 `https://www.chrobok.dev` serves the placeholder and returns 200
+- [x] 1.4 Vercel Production Branch = `main` — fdd1fcc
+- [x] 1.5 Pre-change observed value recorded in `change.md` Notes — fdd1fcc
+- [x] 1.6 `https://www.chrobok.dev` serves the placeholder and returns 200 — fdd1fcc
 
 ### Phase 2: Document the release model in the repo
 
 #### Automated
 
-- [ ] 2.1 Type check passes (`npx tsc --noEmit`)
-- [ ] 2.2 Lint passes (`yarn lint`)
-- [ ] 2.3 Build passes (`yarn build`)
-- [ ] 2.4 Markdown formatting clean (`npx prettier --check "**/*.md"`)
-- [ ] 2.5 `.github/instructions/04-releaseProcess.instructions.md` exists
-- [ ] 2.6 All index links in `copilot-instructions.md` resolve to real files
-- [ ] 2.7 Diff touches only `.github/**/*.md` and `context/**/*.md`
+- [x] 2.1 Type check passes (`npx tsc --noEmit`)
+- [x] 2.2 Lint passes (`yarn lint`)
+- [x] 2.3 Build passes (`yarn build`)
+- [x] 2.4 Markdown formatting clean (`npx prettier --check "**/*.md"`)
+- [x] 2.5 `.github/instructions/04-releaseProcess.instructions.md` exists
+- [x] 2.6 All index links in `copilot-instructions.md` resolve to real files
+- [x] 2.7 Diff touches only `.github/**/*.md` and `context/**/*.md` (checked against `origin/development`, the real merge base; `main...HEAD` also shows PR #12's husky/commitlint files, which this change did not touch)
 
 #### Manual
 
-- [ ] 2.8 Release module unambiguously names the publishing branch
-- [ ] 2.9 Roadmap baseline no longer contains the stale workflows/publish claims
-- [ ] 2.10 Commit message passes commitlint; branch name passes `validate-branch-name`
+- [x] 2.8 Release module unambiguously names the publishing branch
+- [x] 2.9 Roadmap baseline no longer contains the stale workflows/publish claims
+- [x] 2.10 Commit message passes commitlint; branch name passes `validate-branch-name`
 
 ### Phase 3: Prove the insulation with a live smoke test
 
