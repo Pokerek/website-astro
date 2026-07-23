@@ -47,9 +47,4 @@ agent-judgement confidence, to be compensated with Astro conventions in
 **2026-07-23 — the agent-judgement compensation is in place.** `CLAUDE.md` at
 the repo root carries the always-loaded project facts, and `.claude/rules/`
 carries the file-scoped modules, `astro.md` among them, each with a `paths:`
-frontmatter so it loads when a matching file is read. This replaces
-`.github/copilot-instructions.md` + `.github/instructions/*.instructions.md`,
-which used GitHub Copilot's `applyTo:` convention: correct content, wrong
-delivery mechanism — Claude Code does not read those paths, so with no
-`CLAUDE.md` at the root none of it reached the agent doing the work. Copilot
-support was dropped rather than mirrored, leaving one source of truth.
+frontmatter so it loads when a matching file is read.

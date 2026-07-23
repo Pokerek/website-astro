@@ -79,6 +79,5 @@ When the structure changes, update this section.
 4. Never commit secrets; config goes through `import.meta.env`.
 5. Semantic HTML first, `aria-*` only where semantics are missing.
 
-<!-- Migrated from .github/copilot-instructions.md + .github/instructions/ (Copilot's applyTo convention,
-     which Claude Code does not read). Keep this file under ~200 lines; put file-scoped detail in
-     .claude/rules/ with a `paths:` frontmatter instead. -->
+<!-- Keep this file under ~200 lines; put file-scoped detail in .claude/rules/ with a `paths:`
+     frontmatter instead. -->
