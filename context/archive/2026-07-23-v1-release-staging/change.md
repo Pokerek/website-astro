@@ -1,10 +1,10 @@
 ---
 change_id: v1-release-staging
 title: V1 release staging
-status: impl_reviewed
+status: archived
 created: 2026-07-23
 updated: 2026-07-23
-archived_at: null
+archived_at: 2026-07-23T16:29:17Z
 ---
 
 ## Notes
