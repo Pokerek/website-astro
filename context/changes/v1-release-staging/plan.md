@@ -331,16 +331,16 @@ If Phase 1 finds Vercel's Production Branch set to `development`, note that PR #
 
 #### Automated
 
-- [x] 3.1 Production responds 200
-- [x] 3.2 Production HTML hash matches pre-merge baseline
-- [x] 3.3 Production `last-modified` / `etag` match pre-merge baseline
-- [x] 3.4 `origin/main` unmoved
-- [x] 3.5 `origin/development` contains the docs commit
+- [x] 3.1 Production responds 200 — 97e6de2
+- [x] 3.2 Production HTML hash matches pre-merge baseline — 97e6de2
+- [x] 3.3 Production `last-modified` / `etag` match pre-merge baseline — 97e6de2
+- [x] 3.4 `origin/main` unmoved — 97e6de2
+- [x] 3.5 `origin/development` contains the docs commit — 97e6de2
 
 #### Manual
 
-- [x] 3.6 Vercel shows a Preview deployment for branch `development`
-- [x] 3.7 The `development` preview URL builds and serves the placeholder
-- [x] 3.8 No new Production deployment appeared for this merge
-- [x] 3.9 `chrobok.dev` still shows "Work in progress…" in a browser
-- [x] 3.10 Stable `development` preview URL recorded in `change.md` Notes
+- [x] 3.6 Vercel shows a Preview deployment for branch `development` — 97e6de2
+- [x] 3.7 The `development` preview URL builds and serves the placeholder — 97e6de2
+- [x] 3.8 No new Production deployment appeared for this merge — 97e6de2
+- [x] 3.9 `chrobok.dev` still shows "Work in progress…" in a browser — 97e6de2
+- [x] 3.10 Stable `development` preview URL recorded in `change.md` Notes — 97e6de2
