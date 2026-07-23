@@ -40,6 +40,40 @@ precautionary rather than understated, and no partial-page window was ever open.
 - `development` — unprotected; the protection endpoint returns HTTP 404, which is the intended state
   until F-03 (`inspection-gate`) attaches required status checks.
 
+### Phase 3 — smoke test result (2026-07-23)
+
+**Passed. The insulation is now an observed fact, not a configured intention.**
+
+PR #14 (`docs: document the v1 release model`) merged into `development` as `34f4636`.
+
+| Check | Before | After |
+| --- | --- | --- |
+| `origin/main` | `5a9b9ce` | `5a9b9ce` — unmoved |
+| `origin/development` | `c5b902e` | `34f4636` |
+| chrobok.dev status | 200 | 200 |
+| chrobok.dev `etag` | `"3ed38505cf3185439ceea33a74be45ab"` | identical |
+| chrobok.dev `last-modified` | `Wed, 22 Jul 2026 15:13:42 GMT` | identical |
+| chrobok.dev HTML `shasum` | `34695f98d998730b2786a5fbeeab733c8abc44e1` | identical |
+
+The merge produced **exactly one** new deployment, environment **Preview**, ref `34f4636`. The most
+recent Production deployment is still `5a9b9ce` from 2026-07-22 — `main`'s tip. Slices S-01 to S-07
+can merge into `development` without any risk of reaching the live site.
+
+**Stable `development` review target:**
+`https://website-astro-git-development-karol-chroboks-projects.vercel.app`
+
+**Vercel Deployment Protection is enabled on previews.** Both the stable branch URL and the
+per-commit URL (`https://website-astro-evejxvncr-karol-chroboks-projects.vercel.app`) return
+`302` to `vercel.com/sso-api`; they are reachable only while logged into the Vercel account. This
+was not anticipated in the plan and cuts both ways: it strengthens F-02's goal, since a half-built
+page is not publicly reachable even by URL, but it means any third party asked to review a slice
+preview needs either a Vercel login or a shareable link generated from the dashboard.
+
+**Deviation from plan:** the plan specified "merged, not squashed". The repo allows squash only
+(`allow_merge_commit: false`, `allow_rebase_merge: false`), so PR #14 was squash-merged. The plan's
+intent — that `main` is not touched — held. Note that `delete_branch_on_merge: true`, so the
+feature branch was auto-deleted; trailing bookkeeping commits need a fresh branch.
+
 ### Follow-up out of scope for this change
 
 **The `.github/instructions/` set targets GitHub Copilot, but the project now uses Claude Code.**
