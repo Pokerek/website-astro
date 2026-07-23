@@ -74,6 +74,33 @@ preview needs either a Vercel login or a shareable link generated from the dashb
 intent — that `main` is not touched — held. Note that `delete_branch_on_merge: true`, so the
 feature branch was auto-deleted; trailing bookkeeping commits need a fresh branch.
 
+### Post-archive correction: Progress row 2.4 was a false pass
+
+Added after archiving, deliberately breaking the read-only convention, because leaving a
+falsely-checked criterion in the record is worse than an out-of-order edit.
+
+**Progress row 2.4 ("Markdown formatting clean — `npx prettier --check "**/*.md"`") is marked
+`[x]` but the check never passed.** The `rtk` CLI wrapper rewrote prettier's output to
+`Prettier: All files formatted correctly` while the underlying command was exiting non-zero.
+Running it via `rtk proxy npx prettier --check "**/*.md"` reveals 20 failing files.
+
+Cause: `.prettierrc.json` sets `printWidth: 120`, and most markdown in this repo wraps narrower.
+Fourteen of the twenty files are untouched by this change (`README.md`, four
+`context/foundation/*.md`, `.github/instructions/02`/`03` and all five `codeQuality/*`, both
+`.claude/skills/*`). Two more — `01-overview.instructions.md` and `roadmap.md` — were verified
+already dirty at `6b63754`, before this change began. The criterion was therefore unachievable
+as written: satisfying it required a repo-wide markdown reformat that "What We're NOT Doing"
+explicitly excluded. Prettier is also not wired into `lint-staged` for `.md`, so nothing enforces it.
+
+Resolution: `04-releaseProcess.instructions.md` — the one genuinely new file — was formatted so
+this change adds no debt. Note that prettier normalized its frontmatter to `applyTo: '**/*'`
+(single quotes, per `singleQuote: true`), which differs cosmetically from the double-quoted
+siblings; YAML treats them identically.
+
+Two follow-ups worth their own change: decide whether markdown is in prettier's remit at all
+(and if so, reformat the repo and add `*.md` to `lint-staged`), and treat `rtk`-filtered output
+as unverified whenever a check's exit code actually matters.
+
 ### Follow-up out of scope for this change
 
 **The `.github/instructions/` set targets GitHub Copilot, but the project now uses Claude Code.**

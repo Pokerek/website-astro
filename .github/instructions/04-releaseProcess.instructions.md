@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*"
+applyTo: '**/*'
 ---
 
 # Release Process Instructions
@@ -21,11 +21,11 @@ decides what gets published. Never reason about one from the other.
 
 ## Branch model
 
-| Branch | Role | Deploys to |
-| --- | --- | --- |
-| `main` | Production | https://www.chrobok.dev |
-| `development` | Integration — GitHub default branch | Vercel branch **Preview** (stable per-branch URL) |
-| `(feat\|fix\|chore\|docs)/…` | Feature branches | Vercel per-commit Preview |
+| Branch                       | Role                                | Deploys to                                        |
+| ---------------------------- | ----------------------------------- | ------------------------------------------------- |
+| `main`                       | Production                          | https://www.chrobok.dev                           |
+| `development`                | Integration — GitHub default branch | Vercel branch **Preview** (stable per-branch URL) |
+| `(feat\|fix\|chore\|docs)/…` | Feature branches                    | Vercel per-commit Preview                         |
 
 Flow:
 
